@@ -24,6 +24,10 @@ export class TopPageService {
     return this.topTageModel.find({ firstCategory }, { alias: 1, secondCategory: 1, title: 1 }).exec();
   }
 
+  async findByText(text: string) {
+    return this.topTageModel.find({ $text: { $search: text, $caseSensitive: false } }).exec();
+  }
+
   async deleteById(id: string) {
     return this.topTageModel.findByIdAndDelete(id).exec();
   }
