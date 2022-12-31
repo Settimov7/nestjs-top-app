@@ -13,7 +13,7 @@ jobs:
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
           registry: ghcr.io
-          name: ghcr.io/Settimov7/nestjs-top-app/nestjs-top-app
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+          name: ghcr.io/Settimov7/nestjs-top-app/nestjs-top-app
           tags: "develop"
