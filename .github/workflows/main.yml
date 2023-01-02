@@ -14,6 +14,6 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+          password: ${{ secrets.GITHUB_TOKEN }}
           name: Settimov7/nestjs-top-app/nestjs-top-app
           tags: "develop"
