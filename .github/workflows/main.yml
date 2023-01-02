@@ -8,12 +8,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v3
       - name: Publish to registry
-        uses: elgohr/Publish-Docker-Github-Action@master
+        uses: elgohr/Publish-Docker-Github-Action@v5
         with:
           registry: ghcr.io
-          username: ${{ secrets.DOCKER_USERNAME }}
+          username: ${{ github.actor }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          name: ghcr.io/Settimov7/nestjs-top-app/nestjs-top-app
+          name: Settimov7/nestjs-top-app/nestjs-top-app
           tags: "develop"
