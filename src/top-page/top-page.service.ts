@@ -38,6 +38,10 @@ export class TopPageService {
     return this.topTageModel.find({ $text: { $search: text, $caseSensitive: false } }).exec();
   }
 
+  async findAll() {
+    return this.topTageModel.find({}).exec();
+  }
+
   async deleteById(id: string) {
     return this.topTageModel.findByIdAndDelete(id).exec();
   }
